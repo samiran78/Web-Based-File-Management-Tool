@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <h1 class="flex items-center justify-center ">Backend-Mini project(NOTEBOOK)....<%= 2020+5%></h1>
+    <div class="main w-full min-h-screen bg-gradient-to-r from-orange-200 via-yellow-100 to-pink-200 p-6 text-white rounded-lg shadow-lg">
+      <div class="form px-10 py-10 text-black">
+        <form action=" /create" method="post">
+            <input  class="block px-5 py-2 bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 w-full rounded-lg outline-none" type="text" placeholder="Title goes here...." name="title">
+            <textarea  class="block px-5 py-2 resize-none bg-gradient-to-r from-orange-200 via-yellow-100 to-pink-200 w-full rounded-lg" placeholder="Write your task details.." name="details"></textarea>
+            <input class="mt-2 bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 text-black font-semibold py-2 px-6 rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 hover:opacity-80"  type="submit" value="Create Task Values">
+        </form>
+          
+      </div>
+      <div class="tasks p-10 flex gap-3 flex-wrap">
+         <% if(Files.length>0){  %>
+            <% Files.forEach(function(val){ %>
+               <div class="task w-72 px-3 py-4  rounded-md bg-black">
+                  <h1 class="text-white text-2xl tracking-tight"><%= val%></h1>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione ipsam perspiciatis voluptates deleniti harum quia velit ad voluptatem laborum placeat impedit, quaerat earum totam debitis nisi, explicabo quae ex numquam?</p>
+                  <a class="text-blue-500 inline-block mt-3 mr-28" href="/file/<%= val %>">Read More..</a>
+                  <a class="text-green-400 inline-block mt-3"  href="/edit/<%= val%>">Edit </a>
+               </div>
+               <% })%>
+       <%  }else{ %>
+         <h3 class="text-black">No tasks...</h3>
+     <%  } %>
+         
+         
+         <div class="task w-72 px-3 py-4 hidden rounded-md bg-black">
+            <h1 class="text-white text-2xl tracking-tight">Some Tasks goes here</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione ipsam perspiciatis voluptates deleniti harum quia velit ad voluptatem laborum placeat impedit, quaerat earum totam debitis nisi, explicabo quae ex numquam?</p>
+            <a class="text-blue-500 inline-block mt-3" href="">Read More..</a>
+         </div>
+         <div class="task w-72 px-3 py-4 hidden rounded-md bg-black">
+            <h1 class="text-white text-2xl tracking-tight">Some Tasks goes here</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione ipsam perspiciatis voluptates deleniti harum quia velit ad voluptatem laborum placeat impedit, quaerat earum totam debitis nisi, explicabo quae ex numquam?</p>
+            <a class="text-blue-500 inline-block mt-3" href="">Read More..</a>
+         </div>
+         <div class="task w-72 px-3 py-4 hidden rounded-md bg-black">
+            <h1 class="text-white text-2xl tracking-tight">Some Tasks goes here</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione ipsam perspiciatis voluptates deleniti harum quia velit ad voluptatem laborum placeat impedit, quaerat earum totam debitis nisi, explicabo quae ex numquam?</p>
+            <a class="text-blue-500 inline-block mt-3" href="">Read More..</a>
+         </div>
+         <div class="task w-72 px-3 py-4 hidden rounded-md bg-black">
+            <h1 class="text-white text-2xl tracking-tight">Some Tasks goes here</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione ipsam perspiciatis voluptates deleniti harum quia velit ad voluptatem laborum placeat impedit, quaerat earum totam debitis nisi, explicabo quae ex numquam?</p>
+            <a class="text-blue-500 inline-block mt-3" href="">Read More..</a>
+         </div>
+         
+      </div>
+    </div>
+</body>
+</html>

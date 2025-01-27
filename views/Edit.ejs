@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    
+    <div class="main w-full min-h-screen bg-gradient-to-r from-orange-200 via-yellow-100 to-pink-200 p-6  rounded-lg shadow-lg text-black">
+        <a  class="text-blue-500 inline-block mb-3"  href="/">Go Back to Home!</a>
+        <form action="/edit" method="post">
+            <div class="flex-col items-center">
+                <input  class="block px-5 py-2 bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 w-1/4 rounded-lg outline-none "  type="text" placeholder="Previous name..." name="previous" value="<%= filename%>" readonly>
+                <input  class="block px-5 py-2 bg-gradient-to-r from-blue-400 via-red-500 to-pink-500 w-1/4 rounded-lg outline-none mt-2" type="text" placeholder="New name..." name="newname">
+                <textarea class="block px-5 py-2 bg-gradient-to-r from-green-400 via-yellow-500 to-pink-500 w-1/4 rounded-lg outline-none mt-2" name="newcontent" placeholder="Edit file content..."></textarea>
+            </div>
+            <input class="mt-2 bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 text-black font-semibold py-2 px-6 rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 hover:opacity-80"  type="submit" value="Rename your File-name">
+        </form>
+    </div>
+</body>
+</html>
